@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 26 07:22:21 EDT 2025</td>
+<td>Started on:</td><td>Mon Jun 30 06:35:45 EDT 2025</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (462 ms)</td>
+<tr><td>Total time:</td><td>21 seconds (21012 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,21 +77,11 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='CucumberOptions.TestRunner_TESTNG.runScenario()'><b>runScenario</b><br>Test class: CucumberOptions.TestRunner_TESTNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search Any Vegetable in both home and offers page", "Search Any Vegetable and Place Order"</td>
-<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User is on Greencart Landing Page&apos; and 2 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
+<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User searches same short name &quot;Tom&quot; in offers page&apos; is undefined.
+You can implement this step using the snippet(s) below:
 
-@Given(&quot;User is on Greencart Landing Page&quot;)
-public void user_is_on_greencart_landing_page() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;User searches with short name {string} and extract actual name of product&quot;)
-public void user_searches_with_short_name_and_extract_actual_name_of_product(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User searches same short name {string} in offers page and checks product exists&quot;)
-public void user_searches_same_short_name_in_offers_page_and_checks_product_exists(String string) {
+@Then(&quot;User searches same short name {string} in offers page&quot;)
+public void user_searches_same_short_name_in_offers_page(String string) {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
@@ -132,22 +122,12 @@ public void user_searches_same_short_name_in_offers_page_and_checks_product_exis
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1202220987", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1202220987'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User is on Greencart Landing Page&apos; and 2 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
+</pre></div><a href='#' onClick='toggleBox("stack-trace2076462312", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2076462312'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User searches same short name &quot;Tom&quot; in offers page&apos; is undefined.
+You can implement this step using the snippet(s) below:
 
-@Given(&quot;User is on Greencart Landing Page&quot;)
-public void user_is_on_greencart_landing_page() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;User searches with short name {string} and extract actual name of product&quot;)
-public void user_searches_with_short_name_and_extract_actual_name_of_product(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User searches same short name {string} in offers page and checks product exists&quot;)
-public void user_searches_same_short_name_in_offers_page_and_checks_product_exists(String string) {
+@Then(&quot;User searches same short name {string} in offers page&quot;)
+public void user_searches_same_short_name_in_offers_page(String string) {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
@@ -189,8 +169,8 @@ public void user_searches_same_short_name_in_offers_page_and_checks_product_exis
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>CucumberOptions.TestRunner_TESTNG@2794eab6</td></tr>
+<td>20</td>
+<td>CucumberOptions.TestRunner_TESTNG@53fe15ff</td></tr>
 </table><p>
 </body>
 </html>

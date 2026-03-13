@@ -6,6 +6,9 @@ package StepDefnitionFiles;
 	import org.openqa.selenium.WebElement;
 	import org.testng.Assert;
 
+import PageObjects.LandingPageObjects;
+import PageObjects.OfferPageObjects;
+import PageObjects.PageObjectManager;
 import Utils.GlobalVariables;
 import io.cucumber.java.en.Then;
 	
@@ -13,7 +16,7 @@ import io.cucumber.java.en.Then;
 	public class OfferPage {
 		public static WebDriver driver;
 		public GlobalVariables gbcontext;
-		
+		public PageObjectManager pageObjectManager;
 		 //making driver as global to all stepdefnition files by adding in it globalVariables class
 		//so now change to gbcontext.driver from driver at all places 
 		public OfferPage(GlobalVariables gbcontext) //constructor to use global variables
@@ -28,10 +31,15 @@ import io.cucumber.java.en.Then;
 			public void User_searches_same_short_name_Tom_in_offerspage(String shortName) 
 			{
 				SwitchTo_OffersPage();
-					WebElement tdSearch = gbcontext.driver.findElement(By.id("search-field"));
-					tdSearch.sendKeys(shortName + Keys.ENTER);
-					WebElement tomatofound= gbcontext.driver.findElement(By.xpath("//td[contains(text(),'Tomato')]"));
-					gbcontext.offerpageProduct=tomatofound.getText();
+				//OfferPageObjects op=new OfferPageObjects(gbcontext.driver);
+				/*
+				 * pageObjectManager=new PageObjectManager(gbcontext.driver);
+				 * pageObjectManager.getLandingPage();
+				 */
+				OfferPageObjects offerspage= gbcontext.pageObjectManager.offersPage();
+				//OfferPageObjects offerspage=new OfferPageObjects(gbcontext.driver);
+				offerspage.searchItem(shortName);
+				offerspage.getProductName();
 			}
 				
 		
@@ -43,8 +51,14 @@ import io.cucumber.java.en.Then;
 				System.out.println("Main window is already switched to Top Deals window");
 				}
 				else {
-				WebElement topDeals = gbcontext.driver.findElement(By.linkText("Top Deals"));
-			    topDeals.click();
+					//pageObjectManager=new PageObjectManager(gbcontext.driver);
+					LandingPageObjects landingPage= gbcontext.pageObjectManager.getLandingPage();
+					//LandingPageObjects landingPage=new LandingPageObjects(gbcontext.driver);
+					landingPage.selectTopDealsPage();
+					/*
+					 * WebElement topDeals = gbcontext.driver.findElement(By.linkText("Top Deals"));
+					 * topDeals.click();
+					 */
 				String mainwindow = gbcontext.driver.getWindowHandle();
 				Set<String> manywindows=gbcontext.driver.getWindowHandles();
 				
